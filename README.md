@@ -8,13 +8,15 @@ docker-compose build
 docker-compose -p dev up -d
 ```
 
+### Working direct with Registry
+
 Make a quick push:
 
 ```
 docker pull alpine:latest
 docker tag alpine:latest localhost:5000/my-alpine
 docker push localhost:5000/my-alpine
-docker rmi alpine:latest localhost:5000/my-alpine
+docker rmi localhost:5000/my-alpine
 docker pull localhost:5000/my-alpine
 ```
 
@@ -25,7 +27,25 @@ curl localhost:5000/v2/
 curl localhost:5000/v2/my-alpine/tags/list
 ```
 
+Clean up:
+
+```
+docker rmi localhost:5000/my-alpine
+```
+
+### Working through UI
+
 UI available at:  [http://localhost:8888](http://localhost:8888)
+
+Apparently, the UI web app also expose the [`/v2/` Registry endpoint](https://github.com/kwk/docker-registry-frontend/issues/75). So, you can also post the image through it to the Registry; similarly:
+
+```
+docker tag alpine:latest localhost:8888/my-alpine
+docker push localhost:8888/my-alpine
+curl localhost:8888/v2/
+curl localhost:8888/v2/my-alpine/tags/list
+```
+
 
 REF
 
