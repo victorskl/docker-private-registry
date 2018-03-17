@@ -14,6 +14,8 @@ services:
     image: konradkleine/docker-registry-frontend:v2
     ports:
       - 8888:80
+    env_file:
+      - .env
     environment:
       ENV_DOCKER_REGISTRY_HOST: registry
       ENV_DOCKER_REGISTRY_PORT: 5000
