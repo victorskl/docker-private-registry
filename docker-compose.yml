@@ -8,9 +8,14 @@ services:
       - 5000:5000
     volumes:
       - ./data:/var/lib/registry
+#      - ./registry:/etc/docker/registry:ro
+    env_file:
+      - .env
+#    environment:
+#      REGISTRY_STORAGE_DELETE_ENABLED: "false"
     restart: always
 
-  registry-ui:
+  registry_ui:
     image: konradkleine/docker-registry-frontend:v2
     ports:
       - 8888:80
