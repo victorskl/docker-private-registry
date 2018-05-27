@@ -322,8 +322,6 @@ blob eligible for deletion: sha256:3fd9065eaf02feaf94d68376da52541925650b81698c5
 INFO[0000] Deleting blob: /docker/registry/v2/blobs/sha256/3f/3fd9065eaf02feaf94d68376da52541925650b81698c53c6824d92ff63f98353  go.version=go1.7.6 instance.id=bdcbcd4c-051a-4c55-b0bd-15056859a392
 ```
 
-- https://gbougeard.github.io/blog.english/2017/05/20/How-to-clean-a-docker-registry-v2.html
-
 
 ### Deleting un-wanted repository
 
@@ -357,3 +355,13 @@ REF
 - https://docs.docker.com/registry/deploying/
 - https://docs.docker.com/registry/spec/api/
 - https://github.com/kwk/docker-registry-frontend
+
+How to delete/clean registry
+
+- https://gbougeard.github.io/blog.english/2017/05/20/How-to-clean-a-docker-registry-v2.html
+- https://stackoverflow.com/questions/25436742/how-to-delete-images-from-a-private-docker-registry
+
+Docker image tagging and _:latest_ tag
+
+- https://vsupalov.com/docker-latest-tag/
+- http://container-solutions.com/tagging-docker-images-the-right-way/
